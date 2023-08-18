@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_state_management/bloc/items_bloc.dart';
 
@@ -13,7 +14,7 @@ class ItemsView extends StatefulWidget {
 class _ItemsViewState extends State<ItemsView> {
   @override
   void initState() {
-    // TODO: implement initState
+     SystemChrome.setEnabledSystemUIMode(SystemUiMode.leanBack);
     context.read<ItemsBloc>().add(ItemsLoadedEvent());
     super.initState();
   }
